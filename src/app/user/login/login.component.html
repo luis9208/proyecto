@@ -1,0 +1,46 @@
+<section id="login" class="mb-5 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+                <div class="card_login">
+                    <div class="card">
+                        <div class="card-title text-center" >
+                            <h1>
+                                <mat-icon>face</mat-icon>
+                                LOGIN
+                            </h1>
+                        </div>
+                        <div class="card-body text-center">
+                            <form #form="ngForm" (submit)="autService.loginEmailUser(email,password)" >
+                                <div class="form-group">
+                                    <input type="email" [(ngModel)]="email" placeholder="email" class="form-control" name="email" id="email"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" placeholder="Contraseña" class="form-control" name="password"
+                                        id="password" required [(ngModel)]="password">
+                                </div>
+
+                                <button (click)="autService.loginEmailUser()" type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
+                                <div class="form-group">
+                                    <button (click)="autService.loginGoogleUser()" class="btn btn-lg btn-success btn-block">google</button>
+
+                                </div>
+                                <div class="form-group">
+
+                                    <button (click)="autService.loginFacebookUser()" type="submit" class="btn btn-lg btn-secondary btn-block">Facebook</button>
+
+                                </div>
+                                <div class="form-group">
+                                    <a routerLink='/register'> Crea cuenta </a>
+                                </div>
+                               
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

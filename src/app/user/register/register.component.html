@@ -1,0 +1,50 @@
+<section id="login" class="mb-5 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+                <div class="card_login">
+                    <div class="card">
+                        <div class="card-title text-center">
+                            <h1>
+                                <mat-icon>power_settings_new</mat-icon>
+                                Resgistro
+                            </h1>
+                        </div>
+                        <div class="card-body text-center">
+                            <form #form="ngForm" (submit)="authservice.registerUser(email,password)" action="">
+                                <div class="form-group">
+                                    <input type="text" [(ngModel)]="nombre" placeholder="nombre" class="form-control" name="nombre" id="nombre" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" [(ngModel)]="email" placeholder="email" class="form-control" name="email" id="email"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" [(ngModel)]="password" placeholder="Contraseña" class="form-control" name="password"
+                                        id="password" required>
+                                </div>
+                                <div class="form-group">
+                                    <h5>Seleccionar Imagen: </h5>
+                                    <input type="file"  accept="image/*" name="imgProfile" id="imgProfile" (change)="upload($event)">                                
+                                </div>
+
+                                <button type="submit" class="btn btn-lg btn-primary btn-block">Registrar</button>
+                                <div class="form-group">
+                                    <button (click)="autService.loginGoogleUser()" class="btn btn-lg btn-success btn-block">google</button>
+                                
+                                </div>
+                                <div class="form-group">
+                                
+                                    <button (click)="autService.loginFacebookUser()" type="submit"
+                                        class="btn btn-lg btn-secondary btn-block">Facebook</button>
+                                
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
